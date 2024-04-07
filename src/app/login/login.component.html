@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="d-flex justify-content-center align-items-center my-5 py-5 container">
+    <div class=" d-flex align-items-center" style="height: 500px; width: 350px;">
+        <div class="w-100">
+            <h2 class="text-center mb-3 fw-bold Headings" style="color: #a28d5d;">Login</h2>
+            <h6 class="text-center mb-4">Please enter your e-mail and password:</h6>
+            <form action="" class="">
+                <div class="form-floating mb-3 ">
+                    <input type="email" class="form-control" name="email" required email id="floatingInput"
+                        style="border-radius: 0;">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" required pattern="[a-zA-Z0-9]*"
+                        id="floatingPassword" style="border-radius: 0;">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <button class=" me-3 w-100 login-btn py-2" style=" letter-spacing: 2px;"
+                    routerLink="/home">LOGIN</button>
+                    <h6 class="text-center mt-3">Dont have an account? <span style="cursor: pointer;" class="new-reg" routerLink="/register">Create one</span></h6>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

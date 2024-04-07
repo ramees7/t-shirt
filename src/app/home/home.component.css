@@ -1,0 +1,38 @@
+.home-btn{
+    background: linear-gradient(to left, #fff 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #a28d5d;
+    transition: .5s ease-in-out;
+    border: 1px  solid #fff;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}
+.home-btn:hover{
+    color: #a28d5d;
+    background-position: left;
+}
+.home-btn-2{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    border: 1px  solid #a28d5d;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}
+.home-btn-2:hover{
+    color: #a28d5d;
+    background-position: left;
+}
+.back-img{
+    background-image:url(/assets/images/home-4.jpg);
+    height: 700px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.mat-tab-div{
+    scroll-behavior: smooth;
+}
+.mat-mdc-tab-labels{
+    justify-content: center;
+}
