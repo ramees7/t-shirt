@@ -1,0 +1,34 @@
+.product-col {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.edit-btn{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    border: 1px  solid #a28d5d;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}
+.edit-btn:hover{
+    color: #a28d5d;
+    background-position: left;
+}
+.del-btn{
+    color: #a28d5d;
+    background-position: left;
+    border: 1px  solid #a28d5d;
+    background-color: transparent;
+}
+.del-btn:hover{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}

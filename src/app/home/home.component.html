@@ -1,12 +1,13 @@
-<!-- <div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;" *ngIf="!splash">
+<div class="bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;" *ngIf="!splash">
     <div class="d-flex flex-column align-items-center">
         <img src="assets/images/logo.png" alt="logo" style="width: 200px;">
         <div class="spinner-border text-light mt-4" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-</div> -->
-<div *ngIf="!splash">
+</div>
+
+<div *ngIf="splash">
     <app-header></app-header>
     <div class="row gx-0 mt-5 ">
         <div class="d-flex container justify-content-md-center "
@@ -16,9 +17,9 @@
                 <h5 class="text-center">The Prettiest Little Town In Canada</h5>
                 <div class="d-flex mt-3 justify-content-center">
                     <button class=" me-3  home-btn py-2" style=" letter-spacing: 2px; width: 260px;"
-                        routerLink="/home">Shop New Arrivals</button>
-                    <button class=" me-3 home-btn py-2" style=" letter-spacing: 2px; width: 260px;"
-                        routerLink="/home">Create Account</button>
+                        routerLink="/products" title="shop new arrivals" >Shop New Arrivals</button>
+                    <button class=" ms-3 home-btn py-2" style=" letter-spacing: 2px; width: 260px;"
+                        routerLink="/register">Create Account</button>
                 </div>
             </div>
         </div>
@@ -29,14 +30,73 @@
             <img src="assets/images/home-2.jpg" alt="" class="img-fluid h-100">
         </div>
     </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <div class=" " style="background-color: #f2f2eb;">
         <div class="p-5 container">
             <h1 class="Headings px-md-5 pt-5 mb-3" style="text-align:start;">We're one of the only brands in the world
                 that manufactures every one of their products in India.</h1>
-            <h6 class="px-md-5 pb-5" style="letter-spacing: 1px; text-decoration: underline;">LEARN MORE <i
+            <h6 class="mx-md-5 mb-5" style="letter-spacing: 1px; text-decoration: underline; cursor: pointer;" routerLink="/">LEARN MORE <i
                     class="fa-solid fa-arrow-right"></i></h6>
         </div>
     </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="row gx-0">
+        <div class="col-sm-12 p-5  d-block d-sm-none">
+            <div class="d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="d-flex align-items-center flex-column">
+                    <h2 class="Headings mb-4">Branded Products.</h2>
+                    <p style="font-size: 12px; letter-spacing: 1px;">Discover premium quality and style with our
+                        collection of branded t-shirts, crafted for comfort and designed to make a statement..</p>
+                    <button class="  home-btn-2 py-2 mt-3" style=" letter-spacing: 2px; width: 260px;"
+                        routerLink="/">SHOP
+                        COLLECTION</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 d-block">
+            <img src="https://c4.wallpaperflare.com/wallpaper/134/88/961/beautiful-girl-levi-s-t-shirt-wallpaper-preview.jpg"
+                alt="" class="img-fluid" style="height: 600px;">
+        </div>
+        <div class="col-md-6 d-none d-sm-block p-5 ">
+            <div class="d-flex align-items-center h-100">
+                <div class="ms-5 w-75">
+                    <h2 class="Headings mb-4">Branded Products.</h2>
+                    <p style="font-size: 12px; letter-spacing: 1px;">Discover premium quality and style with our
+                        collection of branded t-shirts, crafted for comfort and designed to make a statement.</p>
+                    <button class=" me-3 home-btn-2 py-2 mt-3" style=" letter-spacing: 2px; width: 260px;"
+                        routerLink="/">SHOP
+                        COLLECTIONS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="back-img-1 d-flex justify-content-center align-items-center flex-column">
+        <h1 class="Headings">Explore Trending Collections</h1>
+        <button class=" me-3 home-btn py-2 mt-3" style=" letter-spacing: 2px; width: 260px;" routerLink="/">SHOP
+            COLLECTIONS</button>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <app-trendingnewarrivals></app-trendingnewarrivals>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="back-img-2 d-flex justify-content-center align-items-center flex-column">
+        <h1 class="Headings">Sweatsuits Collections</h1>
+        <button class=" me-3 home-btn py-2 mt-3" style=" letter-spacing: 2px; width: 260px;" routerLink="/">SHOP
+            COLLECTIONS</button>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <div class="row gx-0">
         <div class="col-sm-12 p-5  d-block d-sm-none">
             <div class="d-flex align-items-center justify-content-center h-100 w-100">
@@ -68,54 +128,228 @@
             </div>
         </div>
     </div>
-    <div class="back-img d-flex justify-content-center align-items-center flex-column">
-        <h1 class="Headings">Explore Trending Collections</h1>
-        <button class=" me-3 home-btn-2 py-2 mt-3" style=" letter-spacing: 2px; width: 260px;" routerLink="/">SHOP
-            COLLECTIONS</button>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div style="background-color: #f2f2eb;" class="p-5">
+        <div class=" d-none d-md-block ">
+            <div class="d-flex gx-0 row align-items-center px-lg-5 py-5">
+
+                <div class="col-md-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/globe-home.png" alt="" style="width: 130px; ">
+                    <h5 class="Headings mt-4 mb-2">Anti-Fast Fashion</h5>
+                    <p style="font-size: 13px;">The main goal of our brand is to be as sustainable as <br> possible. The
+                        anti-fast fashion.</p>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/india-home.jpg" alt="" style="width: 130px;">
+                    <h5 class="Headings mt-4 mb-2">Made in India</h5>
+                    <p style="font-size: 13px;">We don’t compromise on local manufacturing. All of our <br> products are
+                        designed and made in India.</p>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/cotton-home.png" alt="" style="width: 130px;">
+                    <h5 class="Headings mt-4 mb-2">Organic Cotton</h5>
+                    <p style="font-size: 13px;">When possible, we try our hardest to use 100% <br> organic cotton that
+                        is knit in Canada.</p>
+                </div>
+            </div>
+        </div>
+        <div class=" d-sm-block d-xs-block d-md-none">
+            <div class="row gx-0 d-flex align-items-center">
+                <div class="col-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/globe-home.png" alt="" style="width: 80px; ">
+                    <h6 class="Headings mt-4 mb-2">Anti-Fast Fashion</h6>
+                    <p style="font-size: 11px;">The main goal of our brand is to be as sustainable as possible. The
+                        anti-fast fashion.</p>
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/india-home.jpg" alt="" style="width: 80px;">
+                    <h6 class="Headings mt-4 mb-2">Made in India</h6>
+                    <p style="font-size: 11px;">We don’t compromise on local manufacturing. All of our products are
+                        designed and made in India.</p>
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center flex-column p-2">
+                    <img src="assets/images/cotton-home.png" alt="" style="width: 80px;">
+                    <h6 class="Headings mt-4 mb-2">Organic Cotton</h6>
+                    <p style="font-size: 11px;">When possible, we try our hardest to use 100% organic cotton that is
+                        knit in Canada.</p>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="mat-tab-div container">
-        <mat-tab-group class="my-5 mx-3 mat-tab-div" style="height: 500px;">
-            <mat-tab >
-                <ng-template mat-tab-label>
-                    <span class="Headings" title="Thriller Movies">New Arrivals</span>
-                </ng-template>
-                <div class="row gx-0">
-                    <div class="col-lg-3 d-flex justify-content-center">
-                        <div class="card" style="width: 18rem; border: none;">
-                            <img src="https://provinceofcanada.com/cdn/shop/files/Lead-SuperBlue-Women-Short-1S8A9726_400x.jpg?v=1712171976" class="card-img-top card-images-1 " alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title Headings text-center">Blue Shorts For Women</h5>
-                            </div>
-                            <a class="stretched-link" routerLink="/login"></a>
-                          </div>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <button class=" me-3 home-btn-2 py-2 mt-3" style=" letter-spacing: 2px; width: 260px;" routerLink="/">
-                            MORE NEW ARRIVALS</button>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="px-lg-5 py-5">
+        <div class="d-none d-md-block">
+            <div class="row gx-0 ">
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/v-neck.jpeg" alt="" class="img-fluid" style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">V-neck
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </mat-tab>
-            <mat-tab>
-                <ng-template mat-tab-label>
-                    <span class="Headings" title="Thriller Movies">Trendings</span>
-                </ng-template>
-                <div class="row gx-0">
-                    <div class="col-lg-3 d-flex justify-content-center">
-                        <div class="card" style="width: 18rem; border: none;">
-                            <img src="https://provinceofcanada.com/cdn/shop/files/Lead-SuperBlue-Women-Short-1S8A9726_400x.jpg?v=1712171976" class="card-img-top card-images-1 " alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title Headings text-center">Blue Shorts For Women</h5>
-                            </div>
-                            <a class="stretched-link" routerLink="/login"></a>
-                          </div>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <button class=" me-3 home-btn-2 py-2 mt-3" style=" letter-spacing: 2px; width: 260px;" routerLink="/">
-                            MORE TRENDINGS</button>
+                <div class="col-lg-4 col-md-6 d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/polo-home.webp" alt="" class="img-fluid" style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Polo
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </mat-tab>
-        </mat-tab-group>
+                <div class="col-lg-4 col-md-12 d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/five-sleeve.jpg" alt="" class="img-fluid " style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width:fit-content;" routerLink="/">Five Sleeve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/full-sleeve.webp" alt="" class="img-fluid" style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Full Sleeve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/hats.jpeg" alt="" class="img-fluid" style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Hats
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  d-flex justify-content-center p-3">
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/tracksuit.jpg" alt="" class="img-fluid" style="height: 473px;">
+                        <div class="card-img-overlay card-img-overlay-lg">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">TrackSuits
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-sm-block d-xs-block d-md-none">
+            <mat-tab-group class=" mb-4 mx-3 mat-tab-div">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">V-Neck</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/v-neck.jpeg" alt="" class="img-fluid" style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">V-neck
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">Polo</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/polo-home.webp" alt="" class="img-fluid" style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Polo
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">Five Sleeve</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/five-sleeve.jpg" alt="" class="img-fluid " style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width:fit-content;" routerLink="/">Five Sleeve
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+            <mat-tab-group class="mb-4 mx-3 mat-tab-div">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">Full Sleeve</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/full-sleeve.webp" alt="" class="img-fluid" style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Full Sleeve
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">Hats</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/hats.jpeg" alt="" class="img-fluid" style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">Hats
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="Headings" title="Thriller Movies">TrackSuits</span>
+                    </ng-template>
+                    <div class="card w-100 border-0">
+                        <img src="assets/images/tracksuit.jpg" alt="" class="img-fluid" style="height: 300px;">
+                        <div class="card-img-overlay card-img-overlay-sm">
+                            <button class=" me-3 home-btn py-2 mt-3 px-3"
+                                style=" letter-spacing: 2px; width: fit-content;" routerLink="/">TrackSuits
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
     </div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="back-img-3 d-flex justify-content-center align-items-center flex-column">
+        <div class="d-flex align-items-center justify-content-center flex-column p-3"
+            style="width: 250px; height: 300px; background-color: #fff; border: 1px solid #a28d5d;">
+            <h3 class="Headings mb-4">Contact Us</h3>
+            <p style="font-size: 12px; text-align:justify;"> We're dedicated to providing exceptional customer service
+                and ensuring your shopping experience is
+                seamless. Whether you have questions about our products, need assistance with sizing, or simply want to
+                chat about your favorite designs, our team is here to help.</p>
+            <h6 class=" mt-4" style="letter-spacing: 1px; text-decoration: underline; color: #a28d5d; cursor: pointer;" routerLink="/contact">Contact us <i
+                    class="fa-solid fa-arrow-right"></i></h6>
+        </div>
+    </div>
+    
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <app-footer></app-footer>
 </div>
+

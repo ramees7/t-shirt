@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-lg navbar-light ">
+<nav class="navbar fixed-top navbar-lg navbar-light">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center" style="width: 85%;">
             <div class=" d-flex justify-content-md-center ms-5 ps-lg-5"
@@ -7,19 +7,14 @@
                         style="width: 80px;"></a>
             </div>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart-sidebar"
-                aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation"
-                style="position: relative; left: 6%;">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#cart-sidebar" aria-controls="offcanvasRight" aria-expanded="false"
+                aria-label="Toggle navigation" style="position: relative; left: 6%;">
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill  ">
                     0
                 </span>
                 <i class="fa-solid fa-cart-plus" style="color: #a28d5d;"></i>
             </button>
-            <!-- <a class="navbar-brand" routerLink="/cart" style="position: relative; left: 8%;">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill  "  >
-                    0
-                </span>
-                <i class="fa-solid fa-cart-plus" style="color: #a28d5d;"></i></a> -->
         </div>
         <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> -->
 
@@ -51,11 +46,15 @@
                         <a class="text-decoration-none fw-bold Headings" routerLink="/"
                             style="color: #484848; font-size: 20px;">New</a>
                     </li>
-                    <li class="nav-item py-3 mx-3 mb-3 " style="border-bottom: 2px solid #9d9d9d;">
-                        <a class="text-decoration-none fw-bold Headings" routerLink="/"
-                            style="color: #484848; font-size: 20px;">Sale</a>
+                    <li class="nav-item py-3 mx-3 " style="border-bottom: 2px solid #9d9d9d;">
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/search"
+                            style="color: #484848; font-size: 20px;">Search</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
+                    <li class="nav-item py-3 mx-3 mb-3 " style="border-bottom: 2px solid #9d9d9d;">
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/login"
+                            style="color: #484848; font-size: 20px;">Login</a>
+                    </li>
+                    <li class="py-1 mx-3" routerLink="/sizechart">
                         <a>Size Chart</a>
                     </li>
                     <li class="py-1 mx-3" routerLink="">
@@ -70,9 +69,6 @@
                     <li class="py-1 mx-3" routerLink="">
                         <a>Account</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
-                        <a>Size Chart</a>
-                    </li>
                 </ul>
                 <div class=" mx-3 d-flex justify-content-between py-3 mb-4"
                     style="margin-top: 75px; border-top: 2px solid #9d9d9d;">
@@ -86,13 +82,60 @@
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="cart-sidebar" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header mx-3">
-                <h4>Cart</h4>
+                <h4 class="Headings">Cart</h4>
                 <button type="button" class="btn-close text-reset me-3" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body d-flex align-items-center justify-content-center">
-                <h2>Empty Cart</h2>
-                <!-- <app-cart></app-cart> -->
+            <!-- <div class="offcanvas-body d-flex align-items-center flex-column justify-content-center">
+                <h4 class="Headings mb-3">Your Cart is Empty</h4>
+                <button class=" ms-3 cart-empty-btn py-2" style=" letter-spacing: 2px; width: 260px;"
+                routerLink="/home">Shop Now</button>
+            </div> -->
+            <div>
+                <div style="border: 1px  solid #9d9d9d; " class="d-flex justify-content-evenly align-items-center">
+                    <h6 class="py-2 text-center">Free Delivery For ₹500 Above Purchase</h6>
+                    <i class="fa-solid fa-expand" style="cursor: pointer;" routerLink="/cartexpand"></i>
+                </div>
+                <div style="height: 480px ; overflow-y: scroll;">
+                    <div class="card mb-3 mt-4 w-100 p-2" style="border-radius: 0; border: none;">
+                        <div class="row g-0 w-100">
+                            <div class="col-4">
+                                <img src="assets/images/hats.jpeg" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-8 d-flex justify-content-center align-items-center px-2">
+                                <div class="card-body py-0">
+                                    <h5 class="card-category mb-2 Headings">Hats</h5>
+                                    <h6 class="mb-2">Size : S</h6>
+                                    <h6 class="">Price : 500</h6>
+                                    <div routerLink="/sizechart" class="d-flex align-items-center mb-1" style="cursor: pointer;">
+                                        <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <button class="px-3 py-1 "
+                                                style="border: 1px  solid #9d9d9d; background-color: transparent; ">-</button>
+                                            <input type="text" readonly value="1"
+                                                style="width: 50px; border: 1px  solid #9d9d9d;" class="text-center">
+                                            <button class="px-3 py-1"
+                                                style="border: 1px  solid #9d9d9d; background-color: transparent;">-</button>
+                                        </div>
+                                        <h6 style="font-size: 11px; text-decoration: underline;" class="Headings">Remove
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-2 my-3">
+                    <h6 style="font-size: 12px;">
+                        <span style="font-size: 13px ; color: #000;">Add Order Note</span>
+                        Shipping, taxes and discount codes calculated at checkout.
+                    </h6>
+                    <button class=" checkout-btn py-2 w-100 mt-2" style=" letter-spacing: 2px; width: 260px;"
+                        routerLink="/checkout">Cheack Out Now</button>
+                </div>
             </div>
         </div>
     </div>

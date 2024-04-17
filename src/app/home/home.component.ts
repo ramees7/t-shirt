@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit{
   splash:any=false
+  // accountSplash:any=false
+
   // showFirstImage = true;
   // showSecondImage = false;
   // imagePairs = [
@@ -17,16 +19,24 @@ export class HomeComponent implements OnInit{
   constructor(){}
 
   ngOnInit() {
-  //   this.handlesplash()
-  // }
-  // handlesplash(){
-  //   setTimeout(() => {
-  //     this.splash=true
-  //     console.log(this.splash);
-      
-  //   }, 1000);
-  }
+    this.handlesplash()
+    // this.handleAccountSplash()
 
+  }
+  handlesplash(){
+    setTimeout(() => {
+      this.splash=true
+      console.log(this.splash);
+      
+    }, 1000);
+  }
+  // handleAccountSplash(){
+  //   setTimeout(() => {
+  //     this.accountSplash=true
+
+  //   }, 10000);
+  // }
+ 
 
   // toggleImages() {
   //   this.showFirstImage = !this.showFirstImage;

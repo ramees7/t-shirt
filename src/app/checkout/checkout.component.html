@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="container py-5 my-5">
+    <h2 class="Headings mb-5 text-center">Check Out Now</h2>
+    <div class="row gx-o mx-5 ">
+        <div class="col-md-6 mb-5" style="height: 450px ; overflow-y: scroll; scroll-behavior: smooth;">
+            <div class="row g-0 mb-3 py-2" style="border-bottom: 1px solid #9d9d9d;">
+                <div class="col-2 d-flex justify-content-center">
+                    <img src="https://hilitemall.com/upload/store_sub_images/g1zqblZb5Ggv1tUU6hWnUcPgunfeEJqcZVPh9HWO.jpeg"
+                        alt="" class="img-fluid" style="width: 100px; height: 80px;">
+                </div>
+                <div class="col-7  d-flex justify-content-center align-items-center ">
+                    <div>
+                        <h6>Category Name : </h6>
+                        <h6>Size : </h6>
+                        <h6>MRP : <span style="text-decoration: line-through;">500</span> </h6>
+                        <h6>Price : 450</h6>
+                        <h6>Quantity : </h6>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <div>
+                        <h5 style="text-decoration: line-through;">500</h5>
+                        <h5>450 </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column align-items-center my-4"  style="background-color: #f5f5f2;">
+            <div class="w-100 px-lg-5 my-4">
+                <h5 class="Headings text-center mb-3">Shipping Address</h5>
+                <form action="">
+                    <div class="d-flex">
+                        <div class="form-floating mb-2 w-50 me-2">
+                            <input type="text" class="form-control" name="name" required id="floatingname"
+                                style="border-radius: 0;">
+                            <label for="floatingname" style="color: #000;">Name</label>
+                        </div>
+                        <div class="form-floating mb-2 w-50 ms-2">
+                            <input type="text" class="form-control" name="pincode" required id="floatingpincode"
+                                style="border-radius: 0;">
+                            <label for="floatingpincode" style="color: #000;">Pincode</label>
+                        </div>
+                    </div>
+                    <div class="form-floating mb-2 w-100 ">
+                        <input type="text" class="form-control" name="address" required id="floatingaddress"
+                            style="border-radius: 0;">
+                        <label for="floatingaddress" style="color: #000;">Address</label>
+                    </div>
+                </form>
+            </div>
+            <div class=" w-100 d-flex justify-content-evenly ">
+                <div>
+                    <h6 class="mb-2">Total MRP Amount :</h6>
+                    <h6 class="mb-2">Total Amount : </h6>
+                    <h6 class="mb-2">you saved :</h6>
+                    <h6 class="mb-2">Shipping Charge :</h6>
+                    <h6 class="mb-2">Total Price :</h6>
+                </div>
+                <div>
+                    <h6 class="mb-2" style="text-decoration: line-through;">500</h6>
+                    <h6 class="mb-2">450</h6>
+                    <h6 class="mb-2">50</h6>
+                    <h6 class="mb-2">50</h6>
+                    <h6 class="mb-2">550</h6>
+                </div>
+            </div>
+            <div class="px-5 w-100 my-3">
+                <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

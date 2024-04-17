@@ -1,0 +1,13 @@
+.home-btn-2{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    border: 1px  solid #a28d5d;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}
+.home-btn-2:hover{
+    color: #a28d5d;
+    background-position: left;
+}

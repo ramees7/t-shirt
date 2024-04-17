@@ -3,20 +3,26 @@
     <div class=" d-flex align-items-center" style="height: 500px; width: 350px;">
         <div class="w-100">
             <h2 class="text-center mb-3 fw-bold Headings" style="color: #a28d5d;">Login</h2>
-            <h6 class="text-center mb-4">Please enter your e-mail and password:</h6>
-            <form action="" class="">
+            <h6 class="text-center mb-4">Please enter your phone and password:</h6>
+            <form action="" class="" [formGroup]="loginForm">
                 <div class="form-floating mb-3 ">
-                    <input type="email" class="form-control" name="email" required email id="floatingInput"
+                    <input type="text" class="form-control" formControlName="phone" name="phone" id="phone"
                         style="border-radius: 0;">
-                    <label for="floatingInput">Email address</label>
+                    <label for="phone">Phone Number</label>
+                    <div class="text-danger" *ngIf="loginForm.get('phone')?.invalid && loginForm.get('phone')?.touched">
+                        *Invalid Phone
+                    </div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" required pattern="[a-zA-Z0-9]*"
+                    <input type="password" class="form-control" name="password" formControlName="password"
                         id="floatingPassword" style="border-radius: 0;">
                     <label for="floatingPassword">Password</label>
+                    <div class="text-danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                        *Invalid Password
+                    </div>
                 </div>
                 <button class=" me-3 w-100 login-btn py-2" style=" letter-spacing: 2px;"
-                    routerLink="/home">LOGIN</button>
+                    (click)="getLoginData()" [disabled]="loginForm.invalid">LOGIN</button>
                     <h6 class="text-center mt-3">Dont have an account? <span style="cursor: pointer;" class="new-reg" routerLink="/register">Create one</span></h6>
             </form>
         </div>

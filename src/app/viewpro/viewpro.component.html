@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+<div class="p-md-5 my-5 container-fluid">
+    <div class=" d-none d-md-block d-lg-block">
+        <div class="row gx-o ">
+            <div class="col-md-2 py-5 d-flex justify-content-center align-items-center flex-column">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="" class="img-fluid w-75 mb-3">
+            </div>
+            <!-- ----------------------------------------visible only lg------------------------------------------------------------- -->
+
+            <div class="col-md-7 col-sm-10 p-lg-5 pro-img d-none d-lg-block" style="height: 500px;">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="thumbnail" class="img-fluid">
+                <!-- first only thumbanil image and second one for images -->
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="image" class="img-fluid mt-3">
+            </div>
+
+            <!-- ----------------------------------------visible only lg------------------------------------------------------------- -->
+
+            <!-- ----------------------------------------visible only md------------------------------------------------------------- -->
+
+            <div class="col-md-7 col-sm-10 p-lg-5 pro-img d-none d-md-block d-lg-none" style="height: 250px;">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="thumbnail" class="img-fluid">
+                <!-- first only thumbanil image and second one for images -->
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="image" class="img-fluid mt-3">
+            </div>
+            <!-- ----------------------------------------visible only md------------------------------------------------------------- -->
+
+            <div class="col-md-3 p-lg-5">
+                <h2 class="Headings mb-3">shorts</h2>
+                <div class="justify-content-start mb-3" style="width: 100px;">
+                    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+                </div>
+                <h6 class="mb-1" >MRP : <span style="font-size: 25px; text-decoration:line-through;">₹899</span> </h6>
+                <h6 class="mb-2" >Offer Price : <span style="font-size: 25px;">₹499</span> </h6>
+                <div routerLink="/sizechart" class="d-flex align-items-center" style="cursor: pointer;">
+                    <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
+                </div>
+                <div class="dropdown mt-3">
+                    <select class="form-select" aria-label="Default select example "
+                        style="background-color: transparent; border: 1px solid #9d9d9d;">
+                        <option selected disabled>Size</option>
+                        <option value="1">S</option>
+                        <option value="2">M</option>
+                        <option value="3">L</option>
+                        <option value="3">XL</option>
+                    </select>
+
+                </div>
+
+                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" routerLink="/">Add To
+                    Cart
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class=" d-block d-md-none d-lg-none px-3 py-5">
+        <div class="row gx-0 my-5 ">
+            <div class="col-9 pro-img" style="height: 250px;">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="" class="img-fluid  mb-3">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="" class="img-fluid  mb-3">
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center flex-column">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="" class="img-fluid w-75 mb-3">
+                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="" class="img-fluid w-75 mb-3">
+            </div>
+            <div class="col-12 mt-4">
+                <h2 class="Headings mb-3">shorts</h2>
+                <div class="justify-content-start mb-3" style="width: 100px;">
+                    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+                </div>
+                <h6 class="mb-1" >MRP : <span style="font-size: 25px; text-decoration:line-through;">₹899</span> </h6>
+                <h6 class="mb-2" >Offer Price : <span style="font-size: 25px;">₹499</span> </h6>
+                <div routerLink="/sizechart" class="d-flex align-items-center" style="cursor: pointer;">
+                    <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
+                </div>
+                <div class="dropdown mt-3">
+                    <select class="form-select" aria-label="Default select example "
+                        style="background-color: transparent; border: 1px solid #9d9d9d;">
+                        <option selected disabled>Size</option>
+                        <option value="1">S</option>
+                        <option value="2">M</option>
+                        <option value="3">L</option>
+                        <option value="3">XL</option>
+                    </select>
+
+                </div>
+
+                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" routerLink="/">Add To
+                    Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

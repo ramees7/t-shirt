@@ -24,8 +24,23 @@
     color: #a28d5d;
     background-position: left;
 }
-.back-img{
+
+.back-img-1{
     background-image:url(/assets/images/home-4.jpg);
+    height: 700px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.back-img-2{
+    background-image:url(/assets/images/sweat-home.avif);
+    /* https://sc04.alicdn.com/kf/H70525fd591534a5bb0467c4b7cfaa51aS.jpg */
+    height: 700px;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.back-img-3{
+    background-image:url(/assets/images/shop-img-home.jpg);
+    /* https://sc04.alicdn.com/kf/H70525fd591534a5bb0467c4b7cfaa51aS.jpg */
     height: 700px;
     background-attachment: fixed;
     background-size: cover;
@@ -33,6 +48,19 @@
 .mat-tab-div{
     scroll-behavior: smooth;
 }
+.tab-cols{
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    display: none;
+}
 .mat-mdc-tab-labels{
     justify-content: center;
+}
+.card-img-overlay-lg{
+    top: 385px;
+}
+.card-img-overlay-sm{
+    top: 210px;
 }

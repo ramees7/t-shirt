@@ -1,32 +1,52 @@
 <app-header></app-header>
 <div class="d-flex justify-content-center align-items-center my-5 py-5 container">
-    <div class=" d-flex align-items-center" style="height: 500px; width: 350px;">
+    <div class=" d-flex align-items-center" style="height: 550px; width: 350px;">
         <div class="w-100">
             <h2 class="text-center mb-3 Headings fw-bold" style="color: #a28d5d;">Register</h2>
             <h6 class="text-center mb-4">Please fill in the information below:</h6>
-            <form action="" class="">
+            <form action="" class="" [formGroup]="regForm">
                 <div class="form-floating mb-3 ">
-                    <input type="email" class="form-control" name="email" required email id="floatingInput"
+                    <input type="text" class="form-control" name="username" formControlName="username" id="username"
                         style="border-radius: 0;">
-                    <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" required pattern="[a-zA-Z0-9]*"
-                        id="floatingPassword" style="border-radius: 0;">
-                    <label for="floatingPassword">Password</label>
+                    <label for="username">Username</label>
+                    <div class="text-danger" *ngIf="regForm.get('username')?.invalid && regForm.get('username')?.touched">
+                        *Invalid Username
+                    </div>
                 </div>
                 <div class="form-floating mb-3 ">
-                    <input type="email" class="form-control" name="email" required email id="floatingInput"
+                    <input type="email" class="form-control" name="email" id="email" formControlName="email"
                         style="border-radius: 0;">
-                    <label for="floatingInput">Email address</label>
+                    <label for="email">Email address</label>
+                    <div class="text-danger" *ngIf="regForm.get('email')?.invalid && regForm.get('email')?.touched">
+                        *Invalid Email
+                    </div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" required pattern="[a-zA-Z0-9]*"
-                        id="floatingPassword" style="border-radius: 0;">
-                    <label for="floatingPassword">Password</label>
+                    <input type="number" class="form-control" name="number" formControlName="phone"
+                        id="number" style="border-radius: 0;">
+                    <label for="number">Phone Number</label>
+                    <div class="text-danger" *ngIf="regForm.get('phone')?.invalid && regForm.get('phone')?.touched">
+                        *Invalid Phone Number
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password"  formControlName="password"
+                        id="Password" style="border-radius: 0;">
+                    <label for="Password">Password</label>
+                    <div class="text-danger" *ngIf="regForm.get('password')?.invalid && regForm.get('password')?.touched">
+                        *Invalid Password
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="confirmpassword"  formControlName="confirmpassword"
+                        id="confirmpassword" style="border-radius: 0;">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <div class="text-danger" *ngIf="regForm.get('confirmpassword')?.invalid && regForm.get('confirmpassword')?.touched">
+                        *Invalid Confirm Password
+                    </div>
                 </div>
                 <button class=" me-3 w-100 login-btn py-2" style=" letter-spacing: 2px;"
-                    routerLink="/home">CREATE MY ACCOUNT</button>
+                 (click)="getRegFromData()" [disabled]="regForm.invalid">CREATE MY ACCOUNT</button>
                     <h6 class="text-center mt-3">You have an account? <span style="cursor: pointer;" class="new-reg" routerLink="/login">login</span></h6>
             </form>
         </div>

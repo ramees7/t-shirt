@@ -1,0 +1,70 @@
+<app-admin-header></app-admin-header>
+
+<div class="container my-5 py-5">
+
+    <div class="row px-lg-5">
+        <div class="col-md-6 px-5">
+            <h2 class="text-center Headings mb-5">Add Category</h2>
+            <form action="" class="d-flex justify-content-center align-items-center flex-column" [formGroup]="addCategoryForm">
+                <label htmlfor="product-img" class="text-center ">
+                    <input type="file" class="d-none" name="CategroyImage" id="product-img" formControlName="image" (change)="getFilCategory($event)">
+                    <img [src]="CategoryImage" alt="" class="img-fluid"
+                        title="Add Category Thumbnail" style="border: 1px solid #9d9d9d; width: 200px; height: 200px;"><br>
+                    Category Thumbnail
+                    <div class="text-danger" *ngIf="addCategoryForm.get('image')?.invalid && addCategoryForm.get('image')?.touched ">
+                        *Invalid Image
+                    </div>
+                </label>
+                <div class="form-floating mb-3 w-100 me-2 mt-3">
+                    <input type="text" class="form-control" name="CategroyName" formControlName="name" required id="floatingCategroyName"
+                        style="border-radius: 0;">
+                    <label for="floatingCategroyName" style="color: #000;">Categroy Name</label>
+                    <div class="text-danger" *ngIf="addCategoryForm.get('name')?.invalid && addCategoryForm.get('name')?.touched">
+                        *Invalid Name
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly w-100 my-2">
+                    <button type="reset" class=" me-2 w-50 reset-btn py-2" style=" letter-spacing: 2px;" (click)="onRefreshCategoryData()">Reset</button>
+                    <button type="submit" class=" ms-2 w-50 add-btn py-2" style=" letter-spacing: 2px;" (click)="handleAddCategory()" [disabled]="addCategoryForm.invalid">Update</button>
+                </div>
+            </form>
+        </div>
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <div class="col-md-6 px-5">
+            <h2 class="text-center Headings mb-5">Add Brand</h2>
+            <form action="" class="d-flex justify-content-center align-items-center flex-column" [formGroup]="addBrandForm">
+                <label htmlfor="product-img" class="text-center ">
+                    <input type="file" class="d-none" name="brandImage" id="product-img" formControlName="image" (change)="getFilBrand($event)">
+                    <img [src]="brandImage" alt="" class="img-fluid"
+                        title="Add Brand Thumbnail" style="border: 1px solid #9d9d9d; width: 200px; height: 200px;"><br>
+                    Brand Thumbnail
+                    <div class="text-danger" *ngIf="addBrandForm.get('image')?.invalid && addBrandForm.get('image')?.touched ">
+                        *Invalid Image
+                    </div>
+                </label>
+                <div class="form-floating mb-3 w-100 me-2 mt-3">
+                    <input type="text" class="form-control" name="Brandname" required id="floatingBrandname"
+                        style="border-radius: 0;" formControlName="name">
+                    <label for="floatingBrandname" style="color: #000;">Brand Name</label>
+                    <div class="text-danger" *ngIf="addBrandForm.get('name')?.invalid && addBrandForm.get('name')?.touched">
+                        *Invalid Name
+                    </div>
+                </div>
+                <div class="form-floating mb-3 w-100 me-2 mt-3">
+                    <input type="text" class="form-control" name="Description" formControlName="description" required id="floatingDescription"
+                        style="border-radius: 0;">
+                    <label for="floatingDescription" style="color: #000;">Brand Description</label>
+                    <div class="text-danger" *ngIf="addBrandForm.get('description')?.invalid && addBrandForm.get('description')?.touched">
+                        *Invalid Description
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly w-100 my-2">
+                    <button type="reset" class=" me-2 w-50 reset-btn py-2" style=" letter-spacing: 2px; cursor: pointer;" (click)="onRefreshBrandData()">Reset</button>
+                    <button type="submit" class=" ms-2 w-50 add-btn py-2" style=" letter-spacing: 2px; cursor: pointer;" (click)="handleAddBrand()" [disabled]="addBrandForm.invalid">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-adminfooter></app-adminfooter>

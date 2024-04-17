@@ -1,0 +1,27 @@
+.add-btn{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    border: 1px  solid #a28d5d;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}
+.add-btn:hover{
+    color: #a28d5d;
+    background-position: left;
+}
+.reset-btn{
+    color: #a28d5d;
+    background-position: left;
+    border: 1px  solid #a28d5d;
+    background-color: transparent;
+}
+.reset-btn:hover{
+    background: linear-gradient(to left, #a28d5d 50%, #ffffff00 50%) right;
+    background-size: 201%;
+    color: #fff;
+    transition: .5s ease-in-out;
+    scroll-behavior: smooth;
+    border-radius: 0;
+}

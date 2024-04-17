@@ -1,0 +1,78 @@
+<app-admin-header></app-admin-header>
+
+<div class="container my-5 py-5">
+    <div>
+        <h2 class="Headings text-center">Edit Product</h2>
+        <div class="row gx-o p-5">
+            <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 p-lg-5">
+                <label htmlfor="product-img">
+                    <input type="file" class="d-none" name="" id="product-img">
+                    <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                        alt="" class="img-fluid" title="Click for Edit">
+                </label>
+            </div>
+            <div class="col-md-7 mb-4  p-lg-5  d-flex justify-content-center align-items-center">
+                <form action="" class="">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="form-floating mb-3 w-100 me-2">
+                            <input type="text" class="form-control" name="MRP" required id="floatingMRP"
+                                style="border-radius: 0;">
+                            <label for="floatingMRP" style="color: #000;">MRP</label>
+                        </div>
+                        <div class="form-floating mb-3 w-100 ms-2">
+                            <input type="text" class="form-control" name="offerPrice" required id="floatingOfferPrice"
+                                style="border-radius: 0;">
+                            <label for="floatingOfferPrice" style="color: #000;">Offer Price</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-evenly mb-3">
+                        <h6 class="me-2">Available Sizes :</h6>
+                        <select class="form-select ms-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>Small</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                        <select class="form-select ms-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>Medium</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                        <select class="form-select ms-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>Large</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                        <select class="form-select ms-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>XL</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-evenly mb-3">
+                        <select class="form-select me-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>New Arrivals</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                        <select class="form-select ms-2" aria-label="Default select example "
+                            style="background-color: transparent; border: 1px solid #9d9d9d;">
+                            <option selected disabled>Trending</option>
+                            <option value="1">yes</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <button class=" me-3 w-100 update-btn py-2" style=" letter-spacing: 2px;"
+                        routerLink="/adminhome">Update</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-adminfooter></app-adminfooter>
