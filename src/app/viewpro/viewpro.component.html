@@ -111,7 +111,7 @@
             <div class="col-12 mt-4">
                 <h2 class="Headings mb-3">{{productsData?.category}}</h2>
                 <div class="justify-content-start mb-3" style="width: 100px;">
-                    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+                    <star-rating [starType]="'svg'" [rating]="4.63"></star-rating>
                 </div>
                 <h6 class="mb-1">MRP : <span style="font-size: 25px; text-decoration:line-through;">{{productsData?.mrp | currency :"INR"}}</span> </h6>
                 <h6 class="mb-2">Offer Price : <span style="font-size: 25px;">{{productsData?.offerprice | currency :"INR"}}</span> </h6>
@@ -130,7 +130,7 @@
 
                 </div>
 
-                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" >Add To
+                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;"  (click)="handleAddtocart(productsData)">Add To
                     Cart
                 </button>
             </div>
