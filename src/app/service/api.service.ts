@@ -9,8 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiService {
 
 
-  // BASE_URL = "https://tshirt-server-o98n.onrender.com"
-  BASE_URL = "http://localhost:3000"
+  BASE_URL = "https://tshirt-server-o98n.onrender.com"
+  // BASE_URL = "http://localhost:3000"
   user: any = "User"
   admin: any = "Admin"
   cartCount = new BehaviorSubject(0)
