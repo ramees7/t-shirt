@@ -23,3 +23,15 @@ p,h1,h2,h3,h4,h5,h6{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #000000;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #ffffff;
+}

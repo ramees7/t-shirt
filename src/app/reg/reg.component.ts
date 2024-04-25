@@ -12,28 +12,28 @@ import { Router } from '@angular/router';
 })
 export class RegComponent {
 
-  constructor(private fb:FormBuilder , private api:ApiService , private toastr:ToastrService , private router:Router){
+  constructor(private fb: FormBuilder, private api: ApiService, private toastr: ToastrService, private router: Router) {
 
   }
-  regForm=this.fb.group({
-    username:['',[Validators.required,Validators.pattern('[a-zA-Z 0-9]*')]],
-    email:['',[Validators.required,Validators.email]],
-    phone:['',[Validators.required,Validators.pattern('[0-9]*'),Validators.minLength(10),Validators.maxLength(10)]],
-    password:['',[Validators.required,Validators.pattern('[a-zA-Z0-9!@#]*'),Validators.minLength(6),Validators.maxLength(10)]],
-    confirmpassword:['',[Validators.required,Validators.pattern('[a-zA-Z0-9!@#]*'),Validators.minLength(6),Validators.maxLength(10)]]
+  regForm = this.fb.group({
+    username: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_]*')]],
+    email: ['', [Validators.required, Validators.email]],
+    phone: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(10), Validators.maxLength(10)]],
+    password: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9!@#]*'), Validators.minLength(6), Validators.maxLength(10)]],
+    confirmpassword: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9!@#]*'), Validators.minLength(6), Validators.maxLength(10)]]
   })
 
-  getRegFromData(){
-      console.log(this.regForm.value)
-      this.api.userRegistrationApi(this.regForm.value).subscribe({
-        next:(res:any)=>{
-          this.toastr.success("Registration Success")
-          this.router.navigateByUrl("/login")
-        },
-        error:(err:any)=>{
-          this.toastr.error(err.error)
-        }
-        
-      })
+  getRegFromData() {
+    console.log(this.regForm.value)
+    this.api.userRegistrationApi(this.regForm.value).subscribe({
+      next: (res: any) => {
+        this.toastr.success("Registration Success")
+        this.router.navigateByUrl("/login")
+      },
+      error: (err: any) => {
+        this.toastr.error("Use Unique Data")
+        console.log(err)
+      }
+    })
   }
 }

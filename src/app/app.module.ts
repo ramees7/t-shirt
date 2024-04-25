@@ -20,7 +20,6 @@ import { TrendingnewarrivalsComponent } from './trendingnewarrivals/trendingnewa
 import { StarRatingModule } from 'angular-star-rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SizechartComponent } from './sizechart/sizechart.component';
-import { SearchComponent } from './search/search.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { AdmineditproductComponent } from './admineditproduct/admineditproduct.component';
@@ -29,6 +28,18 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { NgOptimizedImage } from '@angular/common';
+import { BrandsviewComponent } from './brandsview/brandsview.component';
+import { BrandsproductsviewComponent } from './brandsproductsview/brandsproductsview.component';
+import { NewarrivalproductsviewComponent } from './newarrivalproductsview/newarrivalproductsview.component';
+import { TrendingproductsviewComponent } from './trendingproductsview/trendingproductsview.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { AllcategoryComponent } from './allcategory/allcategory.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { OrdersComponent } from './orders/orders.component';
+import { AdminorderlistComponent } from './adminorderlist/adminorderlist.component';
+import { AdminshippingComponent } from './adminshipping/adminshipping.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +57,22 @@ import { ToastrModule } from 'ngx-toastr';
     ViewproComponent,
     TrendingnewarrivalsComponent,
     SizechartComponent,
-    SearchComponent,
     AddproductComponent,
     AdminfooterComponent,
     AdmineditproductComponent,
     AdminaddbrandcategoryComponent,
     CheckoutComponent,
+    BrandsviewComponent,
+    BrandsproductsviewComponent,
+    NewarrivalproductsviewComponent,
+    TrendingproductsviewComponent,
+    ProfileComponent,
+    SearchPipe,
+    AllcategoryComponent,
+    ShippingComponent,
+    OrdersComponent,
+    AdminorderlistComponent,
+    AdminshippingComponent,
 
 
   ],
@@ -66,7 +87,7 @@ import { ToastrModule } from 'ngx-toastr';
     NgxPayPalModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

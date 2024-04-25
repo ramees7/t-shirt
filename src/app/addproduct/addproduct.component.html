@@ -3,130 +3,172 @@
 <div class="container my-5 py-5">
     <div>
         <h2 class="Headings text-center">Add Product</h2>
-        <div class="row gx-o px-3 py-5">
-            <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 p-lg-3">
-                <div class="row gx-o">
-                    <div class="col-9 d-flex justify-content-center align-items-center">
-                        <label htmlfor="product-img" class="text-center">
-                            <input type="file" class="d-none" name="" id="product-img">
-                            <img src="https://contents.mediadecathlon.com/p2197356/20ec45d54c1ff25c1d2a554ad65cd203/p2197356.jpg?format=auto&quality=70&f=650x0"
-                                style="border: 1px solid #9d9d9d;" alt="" class="img-fluid" title="Add Thumbnail">
-                            Add Thumbnail
-                        </label>
-                    </div>
-                    <div class="col-3 d-flex justify-content-center align-items-center flex-column">
-                        <label htmlfor="product-img " class="text-center mb-2">
-                            <input type="file" class="d-none" name="" id="product-img">
-                            <img src="https://static.thenounproject.com/png/187803-200.png" alt="" class="img-fluid "
-                                title="Add Image 1" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
-                            Image 1
-                        </label>
-                        <label htmlfor="product-img " class="text-center mb-2">
-                            <input type="file" class="d-none" name="" id="product-img">
-                            <img src="https://static.thenounproject.com/png/187803-200.png" alt="" class="img-fluid "
-                                title="Add Image 2" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
-                            Image 2
-                        </label>
-                        <label htmlfor="product-img " class="text-center mb-2">
-                            <input type="file" class="d-none" name="" id="product-img">
-                            <img src="https://static.thenounproject.com/png/187803-200.png" alt="" class="img-fluid"
-                                title="Add Image 3" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
-                            Image 3
-                        </label>
-                        <label htmlfor="product-img " class="text-center ">
-                            <input type="file" class="d-none" name="" id="product-img">
-                            <img src="https://static.thenounproject.com/png/187803-200.png" alt="" class="img-fluid"
-                                title="Add Image 4" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
-                            Image 4
-                        </label>
+        <form action="" class="" [formGroup]="addProductForm">
+            <div class="row gx-o px-3 py-5">
+                <div class="col-md-5 d-flex justify-content-center align-items-center mb-4 p-lg-3">
+                    <div class="row gx-o">
+                        <div class="col-9 d-flex justify-content-center align-items-center">
+                            <label htmlfor="product-img" class="text-center">
+                                <input type="file" class="d-none" name="thumbnail" id="product-img"
+                                    formControlName="thumbnail" (change)="getThumbnailFile($event)">
+                                <img [src]="thumbnailImage" width="100%" 
+                                    style="border: 1px solid #9d9d9d; height: 330px;" alt="" class="img-fluid" title="Add Thumbnail">
+                                Add Thumbnail
+                            </label>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center align-items-center flex-column">
+                            <label htmlfor="product-img " class="text-center mb-2">
+                                <input type="file" class="d-none" name="image_1" id="product-img"
+                                    formControlName="image_1" (change)="getImage_1File($event)">
+                                <img [src]="image_1_Image" alt=""
+                                    class="img-fluid " title="Add Image 1"
+                                    style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
+                                Image 1
+                            </label>
+                            <label htmlfor="product-img " class="text-center mb-2">
+                                <input type="file" class="d-none" name="image_2" id="product-img"
+                                    formControlName="image_2" (change)="getImage_2File($event)">
+                                <img [src]="imgae_2_image" alt=""
+                                    class="img-fluid " title="Add Image 2"
+                                    style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
+                                Image 2
+                            </label>
+                            <label htmlfor="product-img " class="text-center mb-2">
+                                <input type="file" class="d-none" name="image_3" id="product-img"
+                                    formControlName="image_3" (change)="getImage_3File($event)">
+                                <img [src]="image_3_image" alt="" class="img-fluid"
+                                    title="Add Image 3" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
+                                Image 3
+                            </label>
+                            <label htmlfor="product-img " class="text-center ">
+                                <input type="file" class="d-none" name="image_4" id="product-img"
+                                    formControlName="image_4" (change)="getImage_4File($event)">
+                                <img [src]="image_4_image" alt="" class="img-fluid"
+                                    title="Add Image 4" style="border: 1px solid #9d9d9d; height: 80px; width: 100px;">
+                                Image 4
+                            </label>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-7 mb-4  p-lg-3  d-flex justify-content-center align-items-center">
-                <form action="" class="">
-                    <div class="d-flex justify-content-evenly mb-3">
-                        <select class="form-select me-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Category</option>
-                            <option value="1">tshirt</option>
-                            <option value="1">hats</option>
-                        </select>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Brand</option>
-                            <option value="1">Levis</option>
-                            <option value="1">Puma</option>
-                        </select>
-                    </div>
-                    <div class="d-flex w-100 justify-content-between">
-                        <div class="form-floating mb-3 w-100 me-2">
-                            <input type="text" class="form-control" name="MRP" required id="floatingMRP"
-                                style="border-radius: 0;">
-                            <label for="floatingMRP" style="color: #000;">MRP</label>
-                        </div>
-                        <div class="form-floating mb-3 w-100 ms-2">
-                            <input type="text" class="form-control" name="offerPrice" required id="floatingOfferPrice"
-                                style="border-radius: 0;">
-                            <label for="floatingOfferPrice" style="color: #000;">Offer Price</label>
-                        </div>
-                        <div class="form-floating mb-3 w-100 ms-2">
-                            <input type="text" class="form-control" name="color" required id="floatingColor"
-                                style="border-radius: 0;">
-                            <label for="floatingColor" style="color: #000;">Color</label>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-evenly mb-3">
-                        <h6 class="me-2">Available Sizes :</h6>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Small</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Medium</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Large</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>XL</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="d-flex justify-content-evenly mb-3">
-                        <select class="form-select me-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>New Arrivals</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                        <select class="form-select ms-2" aria-label="Default select example "
-                            style="background-color: transparent; border: 1px solid #9d9d9d;">
-                            <option selected disabled>Trending</option>
-                            <option value="1">yes</option>
-                            <option value="1">No</option>
-                        </select>
-                    </div>
-                    <div class="d-flex justify-content-evenly w-100 my-2">
-                        <button type="reset" class=" me-2 w-50 reset-btn py-2"
-                            style=" letter-spacing: 2px;">Reset</button>
-                        <button type="submit" class=" ms-2 w-50 add-btn py-2"
-                            style=" letter-spacing: 2px;">Update</button>
-                    </div>
+                <div class="col-md-7 mb-4  p-lg-3  d-flex justify-content-center align-items-center">
+                    <!-- <form action="" class=""> -->
+                    <div>
+                        <div class="d-flex justify-content-evenly mb-3">
 
-                </form>
+                            <div class="me-2 w-100">
+                                <label for="#category">Category :</label>
+                                <select class="form-select " aria-label="Default select example " id="category"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="category"
+                                    formControlName="category">
+                                    <option selected disabled>Category</option>
+                                    <option value="{{i.name}}" *ngFor="let i of categoryData">{{i.name}}</option>
+                                </select>
+                            </div>
+                            <div class="ms-2 w-100">
+                                <label for="#brand">Brand :</label>
+                                <select class="form-select" aria-label="Default select example " id="brand"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="brand"
+                                    formControlName="brand">
+                                    <option selected disabled>Brand</option>
+                                    <option value="{{i.name}}" *ngFor="let i of brandData">{{i.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="form-floating mb-3 w-100 me-2">
+                                <input type="text" class="form-control" name="MRP" required id="floatingMRP"
+                                    style="border-radius: 0;" formControlName="mrp">
+                                <label for="floatingMRP" style="color: #000;">MRP</label>
+                            </div>
+                            <div class="form-floating mb-3 w-100 ms-2">
+                                <input type="text" class="form-control" name="offerPrice" required
+                                    id="floatingOfferPrice" style="border-radius: 0;" formControlName="offerprice">
+                                <label for="floatingOfferPrice" style="color: #000;">Offer Price</label>
+                            </div>
+                            <div class="form-floating mb-3 w-100 ms-2">
+                                <input type="text" class="form-control" name="color" required id="floatingColor"
+                                    style="border-radius: 0;" formControlName="color">
+                                <label for="floatingColor" style="color: #000;">Color</label>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6 class="me-2 my-auto">Available Sizes :</h6>
+                            <div class="ms-2 w-100">
+                                <label for="#size_small">Small :</label>
+                                <select class="form-select " aria-label="Default select example "
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="size_small"
+                                    formControlName="size_small" id="size_small" f>
+                                    <option selected disabled>Small</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+
+                                </select>
+                            </div>
+                            <div class="ms-2 w-100">
+                                <label for="#size_medium">Medium :</label>
+                                <select class="form-select " aria-label="Default select example " id="size_medium"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="size_medium"
+                                    formControlName="size_medium">
+                                    <option selected disabled>Medium</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="ms-2 w-100">
+                                <label for="#size_large">Large :</label>
+                                <select class="form-select " aria-label="Default select example " id="size_large"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="size_large"
+                                    formControlName="size_large">
+                                    <option selected disabled>Large</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="ms-2 w-100">
+                                <label for="#size_XL">XL :</label>
+                                <select class="form-select " aria-label="Default select example " id="size_XL"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="size_xl"
+                                    formControlName="size_XL">
+                                    <option selected disabled>XL</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-3">
+                            <div class="me-2 w-100">
+                                <label for="#newarrival">New Arrivals :</label>
+                                <select class="form-select" aria-label="Default select example " id="newarrival"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="newarrival"
+                                    formControlName="newarrival">
+                                    <option selected disabled>New Arrivals</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="ms-2 w-100">
+                                <label for="#trending">Trending :</label>
+                                <select class="form-select" aria-label="Default select example " id="trending"
+                                    style="background-color: transparent; border: 1px solid #9d9d9d;" name="trending"
+                                    formControlName="trending">
+                                    <option selected disabled>Trending</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly w-100 my-2">
+                            <button type="reset" class=" me-2 w-50 reset-btn py-2"
+                                style=" letter-spacing: 2px;" (click)="onRefreshForm()">Reset</button>
+                            <button type="submit" class=" ms-2 w-50 add-btn py-2" style=" letter-spacing: 2px;"
+                                (click)="handleAddProduct()" [disabled]="addProductForm.invalid">Add</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </form>
 
     </div>
 </div>

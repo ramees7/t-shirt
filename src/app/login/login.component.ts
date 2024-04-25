@@ -29,6 +29,7 @@ export class LoginComponent {
           sessionStorage.setItem("role",(res.role))
           sessionStorage.setItem("token",(res.token))
           this.toastr.success("User Login Success")
+          this.api.getCartCountApi()
           this.router.navigateByUrl('/')
         }
         else{

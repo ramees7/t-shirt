@@ -1,42 +1,68 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit{
-  splash:any=false
-  // accountSplash:any=false
+export class HomeComponent implements OnInit {
+  splash: any = false
+  categoryData: any;
+  BASEURL:any;
 
-  // showFirstImage = true;
-  // showSecondImage = false;
-  // imagePairs = [
-  //   { showFirstImage: true, showSecondImage: false },
-  //   { showFirstImage: true, showSecondImage: false },
-  // ]
 
-  constructor(){}
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit() {
     this.handlesplash()
-    // this.handleAccountSplash()
-
+    this.getCategoryData()
+    this.BASEURL=this.api.BASE_URL
   }
-  handlesplash(){
+  handlesplash() {
     setTimeout(() => {
-      this.splash=true
+      this.splash = true
       console.log(this.splash);
-      
+
     }, 1000);
   }
+
+
+  getCategoryData() {
+    this.api.getAllCategoriesApi().subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.categoryData = res
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // handleAccountSplash(){
   //   setTimeout(() => {
   //     this.accountSplash=true
 
   //   }, 10000);
   // }
- 
+
 
   // toggleImages() {
   //   this.showFirstImage = !this.showFirstImage;

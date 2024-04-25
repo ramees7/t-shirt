@@ -1,0 +1,45 @@
+<app-admin-header></app-admin-header>
+
+<div class="container py-5 my-5">
+    <h2 class="Headings text-center mb-5">Shipping Details</h2>
+    <div class="row g-0">
+        <div class="d-flex justify-content-between  mb-3">
+            <h5 class="Headings">Order No : {{orderData.orderNo}}</h5>
+            <h5 class="Headings">Total Amount : {{orderData.totalOrderPrice  | currency :"INR"}}</h5>
+        </div>
+        <div class="col-md-6 ">
+            <h6 class="mb-2">Product Details : </h6>
+            <div class="col-12 d-flex" style="width: 100%; overflow-x: scroll;">
+                <div class="d-flex me-2 flex-column align-items-center" *ngFor="let i of orderData.products">
+                    <img src="{{BASE_URL}}/upload/{{i.thumbnail}}" alt="" class="h-100" style="width:300px;">
+                    <h5 class="mt-3">{{i.category}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 px-3">
+            <div class="col-12">
+                <h6 class="mb-3">Shipping Status : </h6>
+                <div>
+                    <div style="background-color: green;" class="py-2 my-5">
+                        <h5 class="text-center" style="color: #fff;">Ordered <span style="font-size: 14px; color: #fff;">(Ordered on {{orderData.date | date}})</span></h5>
+                    </div>
+                    <div style="background-color: green;" class="py-2 mb-5">
+                        <h5 class="text-center" style="color: #fff;">Placed <span style="font-size: 14px; color: #fff;">(Placed on {{orderData.date | date}})</span></h5>
+                    </div>
+                    <div style="background-color: #b0b00f;" class="py-2 mb-5" *ngIf="shippedStatus==false">
+                        <h5 class="text-center" style="color: #fff;">Shipped <span style="font-size: 14px; color: #fff;">(Expected on Tomorrow)</span></h5>
+                    </div>
+                    <div style="background-color: green;" class="py-2 mb-5" *ngIf="shippedStatus==true">
+                        <h5 class="text-center" style="color: #fff;">Shipped <span style="font-size: 14px; color: #fff;">(Shipped on Yesterday)</span></h5>
+                    </div>
+                    <div style="background-color: #b0b00f; " class="py-2 mb-5" *ngIf="deliveryStatus==false">
+                        <h5 class="text-center" style="color: #fff;">Delivery <span style="font-size: 14px; color: #fff;">(Expected on {{orderData.deliveryDate | date}})</span></h5>
+                    </div>
+                    <div style="background-color: green;" class="py-2 mb-5" *ngIf="deliveryStatus==true">
+                        <h5 class="text-center" style="color: #fff;">Delivered <span style="font-size: 14px; color: #fff;">(Delivered on Today)</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<div class="container my-5 py-5">
+    <div class="row">
+        <div class="col-lg-3 d-md-none d-lg-block"></div>
+        <div class="col-lg-6 col-md-9 d-flex justify-content-center mb-3">
+            <h2 class="Headings">My Orders</h2>
+        </div>
+        <div class="col-md-3 col-sm-12 d-flex justify-content-md-end justify-content-center mb-3">
+            <div class="dropdown">
+                <button class=" dropdown-toggle py-2 px-3" type="button" data-bs-toggle="dropdown"
+                    style="background-color: transparent; border: 1px solid #9d9d9d; font-size: 12px;"
+                    aria-expanded="false">
+                    Featured
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortLatest()">Latest</a></li>
+                    <li><a class="dropdown-item" style="cursor: pointer;" (click)="sortEarliest()">Earliest</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div *ngIf=" orderDataStatus==true">
+        <div class="row g-0 mt-4 p-3" style="border: 1px solid #9d9d9d;" *ngFor="let i of orderData">
+            <div class="col-12 d-flex justify-content-between mb-3 pb-2 align-items-center" style="border-bottom: 1px solid #9d9d9d;">
+                <div>
+                    <h5 class="Headings">Order No : {{i.orderNo}}</h5>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button  class="py-2 me-md-2 me-1 px-md-4 px-2 track-btn" routerLink="/track/{{i._id}}">Track Now</button>
+                </div>
+            </div>
+            <div class="row g-0 mt-4" *ngFor="let p of i.products" >
+                <div class="col-md-2 col-5">
+                    <img src="{{BASE_URL}}/upload/{{p.thumbnail}}" alt="" style="width: 80%; height: 100px;">
+                </div>
+                <div class="col-md-4 col-7">
+                    <h5 class="Headings">{{p.category}}</h5>
+                    <h6>{{p.size}}</h6>
+                    <h6>Quantity : {{p.quantity}}</h6>
+                    <h6>{{p.totalprice | currency :"INR"}}</h6>
+                </div>
+                <div class="col-md-5 mt-3 col-9">
+                    <h5 style="font-size: clamp(0.875rem, 0.7639rem + 0.4444vw, 1.125rem);" >Delivery Expected Date By {{i.deliveryDate | date}}</h5>
+                    <h6 style="font-size: clamp(0.75rem, 0.6389rem + 0.4444vw, 1rem);">Your Order Have Been Placed on {{i.date | date}}</h6>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-3 pt-2 align-items-center" style="border-top: 1px solid #9d9d9d;">
+                <div>
+                    <button  class="py-2 ms-md-2 ms-1 px-md-4 px-2 cancel-btn"  (click)="handleOrderDelete( i._id)">Cancel Order</button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <h6 class="me-3">Total Order Price : <span class="Headings" style="font-size: 20px;">{{i.totalOrderPrice | currency :"INR"}}</span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="orderDataStatus==false || orderData.length==0" class="d-flex justify-content-center align-items-center flex-column">
+        <h2 class="Headings  mt-5">No Orders Yet</h2>
+        <button class=" track-btn py-2 mt-3 " style=" letter-spacing: 2px; width: 25%;" routerLink="/products">Shop
+            Now</button>
+
+    </div>
+</div>
+
+
+<app-footer></app-footer>

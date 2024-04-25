@@ -10,8 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminaddbrandcategoryComponent {
 
-  brandImage: string = "https://static.thenounproject.com/png/187803-200.png"
-  CategoryImage: string = "https://static.thenounproject.com/png/187803-200.png"
+  brandImage: string = "/assets/images/add-img.png"
+  CategoryImage: string = "/assets/images/add-img.png"
   brandImageFile:any;
   categoryImageFile:any;
   constructor(private api: ApiService, private fb: FormBuilder, private toastr: ToastrService) {
@@ -57,11 +57,11 @@ export class AdminaddbrandcategoryComponent {
       next: (res: any) => {
         this.toastr.success("New Brand Added Successfully")
         console.log(res);
-        this.brandImage = "https://static.thenounproject.com/png/187803-200.png"
+        this.brandImage = "/assets/images/add-img.png"
         this.onRefreshBrandData()
       },
       error: (err: any) => {
-        this.toastr.error(err.error)
+        this.toastr.error("Failed to Add Brand")
         console.log(err);
 
       }
@@ -99,11 +99,11 @@ export class AdminaddbrandcategoryComponent {
       next: (res: any) => {
         this.toastr.success("New Brand Added Successfully")
         console.log(res);
-        this.CategoryImage = "https://static.thenounproject.com/png/187803-200.png"
+        this.CategoryImage = "/assets/images/add-img.png"
         this.onRefreshCategoryData()
       },
       error: (err: any) => {
-        this.toastr.error(err.error)
+        this.toastr.error("Failed to Add Category")
         console.log(err);
 
       }

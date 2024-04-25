@@ -2,18 +2,30 @@
 
 <div class="p-md-5 my-5 container-fluid">
     <div class=" d-none d-md-block d-lg-block">
-        <div class="row gx-o ">
-            <div class="col-md-2 py-5 d-flex justify-content-center align-items-center flex-column">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
-                    alt="" class="img-fluid w-75 mb-3">
+        <div class="row gx-o py-5">
+            <div class="col-md-2  d-flex align-items-center flex-column">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_1}}" style="height: 100px;" alt=""
+                    class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_2}}" style="height: 100px;" alt=""
+                    class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_3}}" [hidden]="!productsData.image_3" style="height: 100px;" alt=""
+                    class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_4}}" [hidden]="!productsData.image_4" style="height: 100px;" alt=""
+                    class="img-fluid w-75 mb-3">
             </div>
             <!-- ----------------------------------------visible only lg------------------------------------------------------------- -->
 
-            <div class="col-md-7 col-sm-10 p-lg-5 pro-img d-none d-lg-block" style="height: 500px;">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+            <div class="col-md-7 col-sm-10 px-lg-5 pro-img d-none d-lg-block" style="height: 500px;">
+                <img src="{{BASE_URL}}/upload/{{productsData?.thumbnail}}" style="width: 100%; height: 500px;"
                     alt="thumbnail" class="img-fluid">
                 <!-- first only thumbanil image and second one for images -->
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_1}}" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_2}}" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_3}}" [hidden]="!productsData.image_3" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_4}}" [hidden]="!productsData.image_4" style="width: 100%;  height: 470px;"
                     alt="image" class="img-fluid mt-3">
             </div>
 
@@ -21,86 +33,110 @@
 
             <!-- ----------------------------------------visible only md------------------------------------------------------------- -->
 
-            <div class="col-md-7 col-sm-10 p-lg-5 pro-img d-none d-md-block d-lg-none" style="height: 250px;">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+            <div class="col-md-7 col-sm-10 px-lg-5 pro-img d-none d-md-block d-lg-none" style="height: 500px;">
+                <img src="{{BASE_URL}}/upload/{{productsData?.thumbnail}}" style="width: 100%; height: 470px;"
                     alt="thumbnail" class="img-fluid">
                 <!-- first only thumbanil image and second one for images -->
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                <!-- <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
+                    alt="image" class="img-fluid mt-3"> -->
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_1}}" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_2}}" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_3}}" [hidden]="!productsData.image_3" style="width: 100%;  height: 470px;"
+                    alt="image" class="img-fluid mt-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_4}}" [hidden]="!productsData.image_4" style="width: 100%;  height: 470px;"
                     alt="image" class="img-fluid mt-3">
             </div>
             <!-- ----------------------------------------visible only md------------------------------------------------------------- -->
 
-            <div class="col-md-3 p-lg-5">
-                <h2 class="Headings mb-3">shorts</h2>
+            <div class="col-md-3 px-lg-5">
+                <h2 class="Headings mb-3">{{productsData?.category}}</h2>
                 <div class="justify-content-start mb-3" style="width: 100px;">
                     <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
                 </div>
-                <h6 class="mb-1" >MRP : <span style="font-size: 25px; text-decoration:line-through;">₹899</span> </h6>
-                <h6 class="mb-2" >Offer Price : <span style="font-size: 25px;">₹499</span> </h6>
+                <h6 class="mb-1">MRP : <span
+                        style="font-size: 25px; text-decoration:line-through;">{{productsData?.mrp | currency :"INR"}}</span> </h6>
+                <h6 class="mb-2">Offer Price : <span style="font-size: 25px;">{{productsData?.offerprice | currency :"INR"}}</span> </h6>
                 <div routerLink="/sizechart" class="d-flex align-items-center" style="cursor: pointer;">
                     <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
                 </div>
                 <div class="dropdown mt-3">
-                    <select class="form-select" aria-label="Default select example "
+                    <span>Available Sizes :</span>
+                    <select class="form-select" aria-label="Default select example " [(ngModel)]="productsData.size"
                         style="background-color: transparent; border: 1px solid #9d9d9d;">
-                        <option selected disabled>Size</option>
-                        <option value="1">S</option>
-                        <option value="2">M</option>
-                        <option value="3">L</option>
-                        <option value="3">XL</option>
+                        <option selected disabled>Available Sizes :</option>
+                        <option value="Small" [hidden]="!size_small_available">S</option>
+                        <option value="Medium" [hidden]="!size_medium_available">M</option>
+                        <option value="Large" [hidden]="!size_large_available">L</option>
+                        <option value="XL" [hidden]="!size_XL_available">XL</option>
                     </select>
 
                 </div>
 
-                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" routerLink="/">Add To
+                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" (click)="handleAddtocart(productsData)">Add To
                     Cart
                 </button>
             </div>
 
         </div>
     </div>
+
+    <!----------------------- -------------------------------visible only small------------------------------------------------------------------------------------ -->
+
     <div class=" d-block d-md-none d-lg-none px-3 py-5">
         <div class="row gx-0 my-5 ">
-            <div class="col-9 pro-img" style="height: 250px;">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
-                    alt="" class="img-fluid  mb-3">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
-                    alt="" class="img-fluid  mb-3">
+            <div class="col-9 pro-img" style="height: 300px;">
+                <img src="{{BASE_URL}}/upload/{{productsData?.thumbnail}}" style="height: 300px;" width="100%"
+                    alt="thumbnail" class="img-fluid  mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_1}}" style="height: 300px;" width="100%"
+                    alt="image_1" class="img-fluid  mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_2}}" style="height: 300px;" width="100%"
+                    alt="image_2" class="img-fluid  mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_3}}"  [hidden]="!productsData.image_3" style="height: 300px;" width="100%"
+                    alt="image_3" class="img-fluid  mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_4}}"  [hidden]="!productsData.image_3" style="height: 300px;" width="100%"
+                    alt="image_4" class="img-fluid  mb-3">
             </div>
-            <div class="col-3 d-flex justify-content-center align-items-center flex-column">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
-                    alt="" class="img-fluid w-75 mb-3">
-                <img src="https://provinceofcanada.com/cdn/shop/files/WIDE-Him-Stone-Cross-Grain-1S8A6253_1800x.jpg?v=1712957559"
-                    alt="" class="img-fluid w-75 mb-3">
+            <div class="col-3 d-flex align-items-center flex-column">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_1}}" style="height: 60px;"
+                    alt="image_1" class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_2}}" style="height: 60px;"
+                    alt="image_2" class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_3}}"  [hidden]="!productsData.image_3" style="height: 60px;"
+                    alt="image_3" class="img-fluid w-75 mb-3">
+                <img src="{{BASE_URL}}/upload/{{productsData?.image_4}}" [hidden]="!productsData.image_3" style="height: 60px;"
+                    alt="image_4" class="img-fluid w-75 mb-3">
             </div>
             <div class="col-12 mt-4">
-                <h2 class="Headings mb-3">shorts</h2>
+                <h2 class="Headings mb-3">{{productsData?.category}}</h2>
                 <div class="justify-content-start mb-3" style="width: 100px;">
                     <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
                 </div>
-                <h6 class="mb-1" >MRP : <span style="font-size: 25px; text-decoration:line-through;">₹899</span> </h6>
-                <h6 class="mb-2" >Offer Price : <span style="font-size: 25px;">₹499</span> </h6>
+                <h6 class="mb-1">MRP : <span style="font-size: 25px; text-decoration:line-through;">{{productsData?.mrp | currency :"INR"}}</span> </h6>
+                <h6 class="mb-2">Offer Price : <span style="font-size: 25px;">{{productsData?.offerprice | currency :"INR"}}</span> </h6>
                 <div routerLink="/sizechart" class="d-flex align-items-center" style="cursor: pointer;">
                     <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
                 </div>
                 <div class="dropdown mt-3">
                     <select class="form-select" aria-label="Default select example "
                         style="background-color: transparent; border: 1px solid #9d9d9d;">
-                        <option selected disabled>Size</option>
-                        <option value="1">S</option>
-                        <option value="2">M</option>
-                        <option value="3">L</option>
-                        <option value="3">XL</option>
+                        <option selected disabled>Available Sizes</option>
+                        <option value="Small" [hidden]="!size_small_available">S</option>
+                        <option value="Medium" [hidden]="!size_medium_available">M</option>
+                        <option value="Large" [hidden]="!size_large_available">L</option>
+                        <option value="XL" [hidden]="!size_XL_available">XL</option>
                     </select>
 
                 </div>
 
-                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" routerLink="/">Add To
+                <button class=" home-btn-2 py-2 mt-3 w-100" style=" letter-spacing: 2px;" >Add To
                     Cart
                 </button>
             </div>
         </div>
     </div>
+    <!----------------------- -------------------------------visible only small------------------------------------------------------------------------------------ -->
 
 </div>
 

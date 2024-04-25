@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class="container py-5 my-5">
+    <h2 class="text-center Headings mb-5">Our Brands</h2>
+    <div class="row g-0">
+        <div class="col-md-4 col-6 d-flex align-items-center mb-5 p-3" *ngFor="let i of brandData">
+            <div class="d-flex justify-content-center w-100">
+                <img src="{{BASEURL}}/upload/{{i.image}}" alt="" class=""
+                    style="width: 80%; height: 80%; cursor: pointer;" title="click to view {{i.name}}" routerLink="/brandproducts/{{i.name}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

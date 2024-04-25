@@ -11,7 +11,7 @@
                 data-bs-target="#cart-sidebar" aria-controls="offcanvasRight" aria-expanded="false"
                 aria-label="Toggle navigation" style="position: relative; left: 6%;">
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill  ">
-                    0
+                    {{cartCount}}
                 </span>
                 <i class="fa-solid fa-cart-plus" style="color: #a28d5d;"></i>
             </button>
@@ -26,29 +26,36 @@
             <div class="offcanvas-header mx-3">
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
-                <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png" width="50px"
-                    height="50px" style="border-radius: 50%; cursor: pointer;" alt="profile" class="me-3"
-                    routerLink="/profile">
+                <img [src]="userImage" width="50px" height="50px" style="border-radius: 50%; cursor: pointer;"
+                    alt="profile" class="me-3" routerLink="/profile">
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item py-3 mx-3 " style="border-bottom: 2px solid #9d9d9d;">
-                        <a class="text-decoration-none fw-bold Headings" routerLink="/login"
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/"
                             style="color: #484848; font-size: 20px;">Home</a>
                     </li>
                     <li class="nav-item py-3 mx-3  d-flex justify-content-between align-items-center"
                         style="border-bottom: 2px solid #9d9d9d;">
-                        <a class="text-decoration-none fw-bold Headings" routerLink="/register"
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/products"
                             style="color: #484848; font-size: 20px;">Shop</a>
                         <i class="fa-solid fa-plus" style="color: #484848;"></i>
                     </li>
                     <li class="nav-item py-3 mx-3 " style="border-bottom: 2px solid #9d9d9d;">
-                        <a class="text-decoration-none fw-bold Headings" routerLink="/"
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/newarrivals"
                             style="color: #484848; font-size: 20px;">New</a>
                     </li>
                     <li class="nav-item py-3 mx-3 " style="border-bottom: 2px solid #9d9d9d;">
-                        <a class="text-decoration-none fw-bold Headings" routerLink="/search"
+                        <a class="text-decoration-none fw-bold Headings" routerLink="/products"
                             style="color: #484848; font-size: 20px;">Search</a>
+                    </li>
+                    <li class="nav-item py-3 mx-3  " style="border-bottom: 2px solid #9d9d9d;">
+                        <a class="text-decoration-none fw-bold Headings" style="color: #484848; font-size: 20px;"
+                            routerLink="/allcategory">All Categories</a>
+                    </li>
+                    <li class="nav-item py-3 mx-3  " style="border-bottom: 2px solid #9d9d9d;">
+                        <a class="text-decoration-none fw-bold Headings" style="color: #484848; font-size: 20px;"
+                            routerLink="/orders">My Orders</a>
                     </li>
                     <li class="nav-item py-3 mx-3 mb-3 " style="border-bottom: 2px solid #9d9d9d;">
                         <a class="text-decoration-none fw-bold Headings" routerLink="/login"
@@ -57,27 +64,28 @@
                     <li class="py-1 mx-3" routerLink="/sizechart">
                         <a>Size Chart</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
+                    <li class="py-1 mx-3" >
                         <a>Faq</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
+                    <li class="py-1 mx-3" >
                         <a>Return Policy</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
+                    <li class="py-1 mx-3" routerLink="/contact">
                         <a>Contact</a>
                     </li>
-                    <li class="py-1 mx-3" routerLink="">
+                    <li class="py-1 mx-3" routerLink="/register">
                         <a>Account</a>
                     </li>
                 </ul>
-                <div class=" mx-3 d-flex justify-content-between py-3 mb-4"
-                    style="margin-top: 75px; border-top: 2px solid #9d9d9d;">
+                <div class=" mx-3 d-flex justify-content-between py-3 mt-5" style=" border-top: 2px solid #9d9d9d;">
                     <i class="fa-brands fa-facebook-f social-icon"></i>
                     <i class="fa-brands fa-whatsapp social-icon"></i>
                     <i class="fa-brands fa-x-twitter social-icon"></i>
                     <i class="fa-brands fa-instagram social-icon"></i>
                     <i class="fa-brands fa-youtube social-icon"></i>
                 </div>
+                <button class=" checkout-btn py-2 w-100 mt-2" style=" letter-spacing: 2px; width: 260px;"
+                    (click)="handleLogout()" *ngIf="loginStatus==true">LOGOUT</button>
             </div>
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="cart-sidebar" aria-labelledby="offcanvasRightLabel">
@@ -86,40 +94,42 @@
                 <button type="button" class="btn-close text-reset me-3" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
-            <!-- <div class="offcanvas-body d-flex align-items-center flex-column justify-content-center">
-                <h4 class="Headings mb-3">Your Cart is Empty</h4>
-                <button class=" ms-3 cart-empty-btn py-2" style=" letter-spacing: 2px; width: 260px;"
-                routerLink="/home">Shop Now</button>
-            </div> -->
             <div>
                 <div style="border: 1px  solid #9d9d9d; " class="d-flex justify-content-evenly align-items-center">
                     <h6 class="py-2 text-center">Free Delivery For ₹500 Above Purchase</h6>
                     <i class="fa-solid fa-expand" style="cursor: pointer;" routerLink="/cartexpand"></i>
                 </div>
-                <div style="height: 480px ; overflow-y: scroll;">
-                    <div class="card mb-3 mt-4 w-100 p-2" style="border-radius: 0; border: none;">
+                <div style="height: 480px ; overflow-y: scroll;" *ngIf="cartCount>0">
+                    <div class="card mb-3 mt-4 w-100 p-2" style="border-radius: 0; border: none;"
+                        *ngFor="let i of cartProducts">
                         <div class="row g-0 w-100">
                             <div class="col-4">
-                                <img src="assets/images/hats.jpeg" class="img-fluid" alt="...">
+                                <img src="{{BASE_URL}}/upload/{{i.thumbnail}}" class="img-fluid" alt="..."
+                                    style="height: 147px;">
                             </div>
                             <div class="col-8 d-flex justify-content-center align-items-center px-2">
                                 <div class="card-body py-0">
-                                    <h5 class="card-category mb-2 Headings">Hats</h5>
-                                    <h6 class="mb-2">Size : S</h6>
-                                    <h6 class="">Price : 500</h6>
-                                    <div routerLink="/sizechart" class="d-flex align-items-center mb-1" style="cursor: pointer;">
-                                        <img src="assets/images/size-chart.png" alt="" width="30px"><span class="mx-2">Size Chart</span>
+                                    <h5 class="card-category mb-2 Headings">{{i.category}}</h5>
+                                    <h6 class="mb-2">Size : {{i.size}}</h6>
+                                    <h6 class="">Price : {{i.offerprice | currency :"INR"}}</h6>
+                                    <div routerLink="/sizechart" class="d-flex align-items-center mb-1"
+                                        style="cursor: pointer;">
+                                        <img src="assets/images/size-chart.png" alt="" width="30px"><span
+                                            class="mx-2">Size Chart</span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex">
                                             <button class="px-3 py-1 "
-                                                style="border: 1px  solid #9d9d9d; background-color: transparent; ">-</button>
-                                            <input type="text" readonly value="1"
+                                                style="border: 1px  solid #9d9d9d; background-color: transparent; "
+                                                (click)="handleQuantityDecrease(i._id)">-</button>
+                                            <input type="text" readonly value="{{i.quantity}}"
                                                 style="width: 50px; border: 1px  solid #9d9d9d;" class="text-center">
                                             <button class="px-3 py-1"
-                                                style="border: 1px  solid #9d9d9d; background-color: transparent;">-</button>
+                                                style="border: 1px  solid #9d9d9d; background-color: transparent;"
+                                                (click)="handleQuantityIncrease(i._id)">+</button>
                                         </div>
-                                        <h6 style="font-size: 11px; text-decoration: underline;" class="Headings">Remove
+                                        <h6 style="font-size: 11px; text-decoration: underline; cursor: pointer;"
+                                            class="Headings" (click)="handleRemoveFromCart(i._id)">Remove
                                         </h6>
                                     </div>
 
@@ -128,13 +138,21 @@
                         </div>
                     </div>
                 </div>
+                <div *ngIf="cartCount==0">
+                    <div style="height: 480px ;" class="d-flex justify-content-center align-items-center flex-column">
+                        <h2 class="Headings">Empty Cart</h2>
+                        <button class=" checkout-btn py-2 mt-3 " style=" letter-spacing: 2px; width: 25%;"
+                            routerLink="/products">Add
+                            Now</button>
+                    </div>
+                </div>
                 <div class="mx-2 my-3">
                     <h6 style="font-size: 12px;">
                         <span style="font-size: 13px ; color: #000;">Add Order Note</span>
                         Shipping, taxes and discount codes calculated at checkout.
                     </h6>
                     <button class=" checkout-btn py-2 w-100 mt-2" style=" letter-spacing: 2px; width: 260px;"
-                        routerLink="/checkout">Cheack Out Now</button>
+                        routerLink="/checkout" [disabled]="!cartProducts">Cheack Out Now</button>
                 </div>
             </div>
         </div>

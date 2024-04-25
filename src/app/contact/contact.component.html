@@ -22,30 +22,30 @@
 
             </div>
             <div class="col-sm-6 mb-4">
-                <img src="https://cdn.shopify.com/s/files/1/0472/6493/files/WEB-Store-Footer-Dress-Email.jpg?v=1710943168"
+                <img src="assets/images/contact.jpg"
                     alt=" " class="img-fluid">
             </div>
             <div class="col-12 d-flex ">
-                <form action="" class="w-100">
+                <form action="" class="w-100" [formGroup]="contactForm">
                     <div class="d-flex justify-content-between w-100">
                         <div class="form-floating mb-3 w-50 me-3">
-                            <input type="text" class="form-control" name="Name" required pattern="[a-zA-Z]*"
+                            <input type="text" class="form-control" name="Name" formControlName="name" required pattern="[a-zA-Z]*"
                                 id="floatingName" style="border-radius: 0;">
                             <label for="floatingName">Name</label>
                         </div>
                         <div class="form-floating mb-3 w-50 ms-3">
-                            <input type="email" class="form-control" name="email" required email id="floatingInput"
+                            <input type="email" class="form-control" name="email" required email formControlName="useremail" id="floatingInput"
                                 style="border-radius: 0;">
                             <label for="floatingInput">Email address</label>
                         </div>
                     </div>
                     <div class="form-floating mb-3 w-100">
-                        <textarea class="form-control" id="floatingmessage" name="message" style="border-radius: 0; height:100px;"
+                        <textarea class="form-control" id="floatingmessage" name="message" formControlName="message" style="border-radius: 0; height:100px;"
                             rows="4"></textarea>
                         <label for="floatingmessage" class="form-label">Your Message</label>
                     </div>
                     <button class=" me-3 w-100 message-btn py-2" style=" letter-spacing: 2px;"
-                        routerLink="/home">SEND MESSAGE</button>
+                        [disabled]="contactForm.invalid" (click)="handleMessage()">SEND MESSAGE</button>
                 </form>
             </div>
         </div>

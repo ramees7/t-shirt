@@ -2,3 +2,13 @@
     background-color: rgb(10, 0, 209);
     color: #fff;
 }
+@media (max-width:1000px) {
+    .search-inp{
+        width: 60%;
+    }
+}
+@media (min-width:1000px) {
+    .search-inp{
+        width: 30%;
+    }
+}
